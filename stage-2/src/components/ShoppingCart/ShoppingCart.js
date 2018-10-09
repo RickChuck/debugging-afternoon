@@ -18,7 +18,8 @@ class ShoppingCart extends Component {
 
     render() {
         let shoppingCartDisplay = this.state.shoppingCart.map((element, index) => {
-            <div className="shopping-cart-product-container">
+           return (
+                <div className="shopping-cart-product-container">
                 <img src={element.image} alt="" />
                 <div className="shopping-cart-info">
                     <h2>{element.title}</h2>
@@ -27,10 +28,12 @@ class ShoppingCart extends Component {
                         <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(element)}>Remove From Shopping Cart</button>
                     </div>
                 </div>
+                
             </div>
+           )
         })
         return (
-            <div className="shopping-cart-container">
+            <div  className="shopping-cart-container">
                 {shoppingCartDisplay[0] ?
                     shoppingCartDisplay
                     : <div className="go-buy-something"><h1>Your shopping cart is empty!  Go buy something!</h1></div>}
