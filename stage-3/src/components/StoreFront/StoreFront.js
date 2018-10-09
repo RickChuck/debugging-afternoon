@@ -13,7 +13,7 @@ class StoreFront extends Component {
         console.log(this.props.products);
         let productDisplay = this.props.products.map((element, index) => {
             return (
-                <div className="product-container" key={index}>
+                <div key={index} className="product-container" key={index}>
                     <h2>{element.title}</h2>
                     <img src={element.image} alt="" />
                     <h2>{element.desc}</h2>
